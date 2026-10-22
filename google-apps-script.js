@@ -17,6 +17,8 @@
  * 6. Click the Pencil icon (Edit) on your Active deployment.
  * 7. In the "Version" dropdown, select "New version".
  * 8. Click the blue "Deploy" button.
+ * 9. Active Web App URL:
+ *    https://script.google.com/macros/s/AKfycbyjth1Fg3aOkwgQiU9-I4QOtspeb2JfEnKV5sY3LrI1x6gPp3b9hVdqvNQaQHD8AlrAtw/exec
  * ============================================================================
  */
 

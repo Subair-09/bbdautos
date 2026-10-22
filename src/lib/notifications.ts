@@ -2,7 +2,7 @@ import { QuoteRequest, ContactMessage } from '@/types';
 
 const NOTIFICATION_EMAIL = 'Info@bbdautosng.com, sales@bbdautosng.com';
 const DEFAULT_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbxbyuhknunsRoA1n_ivLw0IMVPTloo8a1hyVylWRzpGi-t3J7qT-b-ImSXJ2G4NebEdFg/exec';
+  'https://script.google.com/macros/s/AKfycbyjth1Fg3aOkwgQiU9-I4QOtspeb2JfEnKV5sY3LrI1x6gPp3b9hVdqvNQaQHD8AlrAtw/exec';
 
 export async function sendQuoteToGoogleAppsScript(quote: QuoteRequest): Promise<boolean> {
   const scriptUrl = process.env.GOOGLE_SCRIPT_URL || DEFAULT_SCRIPT_URL;
