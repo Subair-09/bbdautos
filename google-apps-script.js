@@ -15,7 +15,7 @@
  * 8. Click "Deploy" and authorize the script.
  * 9. Copy the generated "Web App URL" (ends in /exec).
  * 10. Add it to your .env.local file in the bbdautos project:
- *     GOOGLE_SCRIPT_URL="https://script.google.com/macros/s/AKfycbzVO6wRkA2s-eejdIwPTOVEXjqI9rfVe01ufbXGjYJf7qbeuXNFGcCwbZTdEbny_F0ABQ/exec"
+ *     GOOGLE_SCRIPT_URL="https://script.google.com/macros/s/AKfycbx_YR9NxMrBDtInLo-w6jqbp8R0lai5yXRgsU4L2-WK2jMyWjQAsx2YivBwCsAMtmZr7w/exec"
  */
 
 const RECIPIENT_EMAIL = "Info@bbdautosng.com, sales@bbdautosng.com";
@@ -103,7 +103,6 @@ function handleQuoteRequest(data) {
 
   // Send email to Info@bbdautosng.com, sales@bbdautosng.com
   GmailApp.sendEmail(recipient, subject, "New Quote Request: " + rfqId + " from " + fullName + " (" + email + ", " + phone + ")", {
-    name: "BBD Autos Quotations",
     htmlBody: htmlBody,
     replyTo: email
   });
@@ -153,7 +152,6 @@ function handleContactMessage(data) {
   var recipient = data.targetEmail || RECIPIENT_EMAIL;
 
   GmailApp.sendEmail(recipient, emailSubject, message, {
-    name: "BBD Autos Contact Desk",
     htmlBody: htmlBody,
     replyTo: email
   });
