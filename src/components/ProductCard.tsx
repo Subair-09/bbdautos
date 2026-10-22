@@ -39,7 +39,7 @@ export default function ProductCard({ product, primaryAction = 'add' }: ProductC
   return (
     <div className="group bg-white border border-[#E3E4E6] rounded-lg overflow-hidden flex flex-col hover:border-gray-300 hover:shadow-md transition-all duration-200">
       {/* Product Image */}
-      <Link href={`/products/${product.slug}`} className="block relative bg-[#FAFAFA] aspect-[4/3] p-4 overflow-hidden border-b border-[#F0F0F0]">
+      <Link href={`/products/${product.slug}`} className="block relative bg-white aspect-[4/3] p-4 overflow-hidden border-b border-[#F0F0F0]">
         <div className="relative w-full h-full">
           <Image
             src={product.image}
