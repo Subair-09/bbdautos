@@ -95,15 +95,18 @@ export default function ContactPage() {
               Contact Information
             </h2>
 
-            {/* Serving Nigeria */}
+            {/* Office Location */}
             <div className="flex items-start gap-4 p-5 rounded-lg border border-[#E3E4E6] bg-[#FAFAFA]">
               <div className="w-10 h-10 rounded-full bg-[#FDF2F2] text-[#C91F26] flex items-center justify-center shrink-0 border border-red-100">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-sm text-[#171B1F]">Serving Nigeria</h4>
-                <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-                  Our team is available to assist you with commercial distribution, logistics depot dispatch, and supply agreements across Nigeria.
+                <h4 className="font-bold text-sm text-[#171B1F]">Office Location</h4>
+                <p className="text-xs sm:text-sm text-gray-700 font-semibold mt-0.5">
+                  20 Babayanju, Oshodi, Lagos, Nigeria
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Serving fleet operators, commercial transporters, and construction sites nationwide across Nigeria.
                 </p>
               </div>
             </div>
@@ -116,14 +119,14 @@ export default function ContactPage() {
               <div>
                 <h4 className="font-bold text-sm text-[#171B1F]">Email Us</h4>
                 <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-                  Send us a message and we'll respond as soon as possible.
+                  Send us a message and our commercial desk will respond immediately.
                 </p>
                 <div className="flex flex-col gap-1 text-xs font-semibold text-[#171B1F] mt-1.5">
+                  <a href="mailto:Sales@bbdautosng.com" className="hover:text-[#C91F26] transition-colors">
+                    Sales@bbdautosng.com
+                  </a>
                   <a href="mailto:Info@bbdautosng.com" className="hover:text-[#C91F26] transition-colors">
                     Info@bbdautosng.com
-                  </a>
-                  <a href="mailto:sales@bbdautosng.com" className="hover:text-[#C91F26] transition-colors">
-                    sales@bbdautosng.com
                   </a>
                 </div>
               </div>
@@ -135,26 +138,36 @@ export default function ContactPage() {
                 <Phone className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-sm text-[#171B1F]">Commercial Sales Desk & WhatsApp</h4>
+                <h4 className="font-bold text-sm text-[#171B1F]">Direct Phone & WhatsApp</h4>
                 <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-                  Connect with our commercial desk for quick product verification, specification sheets, and quote tracking.
+                  Connect with our commercial desk for immediate product verification, price quotes, and delivery tracking.
                 </p>
-                <div className="flex items-center gap-3 mt-1.5">
-                  <a
-                    href="tel:+2349162030930"
-                    className="text-xs font-bold text-[#171B1F] hover:text-[#C91F26] transition-colors"
-                  >
-                    +234 916 203 0930
-                  </a>
-                  <span className="text-gray-300">|</span>
-                  <a
-                    href="https://wa.me/2349162030930"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-semibold text-[#C91F26] hover:underline"
-                  >
-                    Chat on WhatsApp &rarr;
-                  </a>
+                <div className="flex flex-col gap-1 mt-2">
+                  <div className="flex items-center gap-2">
+                    <a
+                      href="tel:+2349039546124"
+                      className="text-xs font-bold text-[#171B1F] hover:text-[#C91F26] transition-colors"
+                    >
+                      09039546124 / +234 903 954 6124
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3 mt-0.5">
+                    <a
+                      href="tel:+2349162030930"
+                      className="text-xs font-bold text-[#171B1F] hover:text-[#C91F26] transition-colors"
+                    >
+                      +234 916 203 0930
+                    </a>
+                    <span className="text-gray-300">|</span>
+                    <a
+                      href="https://wa.me/2349162030930"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-[#C91F26] hover:underline"
+                    >
+                      Chat on WhatsApp &rarr;
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

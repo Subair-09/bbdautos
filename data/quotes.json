@@ -1,5 +1,40 @@
 [
   {
+    "fullName": "Faridah Adedoja Adeyemi",
+    "email": "adeyemifaridah23@gmail.com",
+    "phone": "+2347025566294",
+    "deliveryLocation": "abuja",
+    "companyName": "khalid ogbenu",
+    "businessType": "Construction & Civil Works",
+    "additionalNotes": "lagos yes oooooooooooooo",
+    "items": [
+      {
+        "productId": "prod-truck-tyre-295-80r22",
+        "name": "Truck Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "295/80R22.5 · Radial",
+        "image": "/images/products/commercial_truck_tyre.jpg",
+        "quantity": 1,
+        "slug": "truck-tyre-295-80r22-5"
+      },
+      {
+        "productId": "prod-bus-tyre-315-80r22",
+        "name": "Bus Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "315/80R22.5 · Radial",
+        "image": "/images/products/commercial_truck_tyre.jpg",
+        "quantity": 1,
+        "slug": "bus-tyre-315-80r22-5"
+      }
+    ],
+    "id": "RFQ-2026-3419",
+    "createdAt": "2026-10-22T15:22:39.991Z",
+    "status": "New",
+    "internalNotes": []
+  },
+  {
     "fullName": "SUBAIR NURUDEEN ADEWALE",
     "email": "binmatech@outlook.com",
     "phone": "07033968648",

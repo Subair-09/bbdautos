@@ -49,12 +49,12 @@ export default function AboutPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-extrabold text-[#171B1F] tracking-tight leading-tight">
-                Built on Trust. <br />
-                <span className="text-[#C91F26]">Focused on Your Business.</span>
+                Built for movement. <br />
+                <span className="text-[#C91F26]">Built for trust.</span>
               </h1>
 
               <p className="text-base sm:text-lg text-[#6B7077] leading-relaxed max-w-xl">
-                BBD Autos is a Nigerian automotive dealership committed to providing quality tyres, reliable trucks, and premium vehicles for businesses and individuals across the country.
+                BBD Autos is an emerging automotive company built from a vision that began in 2019 and was brought to life on 28 January 2026. We specialize in the sales, sourcing and distribution of vehicles, automotive spare parts, tyres, batteries, rims, accessories and industrial equipment across Nigeria.
               </p>
 
               <div className="pt-2">
@@ -84,47 +84,66 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4 CORE VALUE PILLARS matching reference Panel 5 */}
-      <section className="py-14 bg-white border-b border-[#F0F0F0]">
+      {/* 5 DRIVE VALUES matching official company profile */}
+      <section className="py-16 bg-white border-b border-[#F0F0F0]">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-full bg-[#FDF2F2] text-[#C91F26] flex items-center justify-center border border-red-100">
-                <ShieldCheck className="w-5 h-5" />
+          <div className="text-center max-w-xl mx-auto mb-10">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#C91F26] mb-1 block">
+              OUR CORE VALUES
+            </span>
+            <h2 className="text-3xl font-extrabold text-[#171B1F] tracking-tight">
+              DRIVE <span className="text-gray-400 font-normal text-xl">— Our values in five words</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="p-6 rounded-lg border border-[#E3E4E6] bg-[#FAFAFA] text-center hover:border-gray-300 transition-all">
+              <div className="w-12 h-12 rounded-full bg-[#C91F26] text-white font-black text-xl flex items-center justify-center mx-auto mb-3 shadow-xs">
+                D
               </div>
-              <h3 className="font-bold text-base text-[#171B1F]">Quality Products</h3>
-              <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                Genuine and verified manufacturing standards from certified global manufacturers.
+              <h3 className="font-bold text-base text-[#171B1F]">Dependability</h3>
+              <p className="text-xs text-gray-500 mt-2 leading-relaxed">
+                Consistency in product delivery and trustworthy supply chain schedules.
               </p>
             </div>
 
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-full bg-[#FDF2F2] text-[#C91F26] flex items-center justify-center border border-red-100">
-                <Users className="w-5 h-5" />
+            <div className="p-6 rounded-lg border border-[#E3E4E6] bg-[#FAFAFA] text-center hover:border-gray-300 transition-all">
+              <div className="w-12 h-12 rounded-full bg-[#C91F26] text-white font-black text-xl flex items-center justify-center mx-auto mb-3 shadow-xs">
+                R
               </div>
-              <h3 className="font-bold text-base text-[#171B1F]">Customer Focus</h3>
-              <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                Tailored procurement terms, transparent quotations, and dedicated enterprise account handling.
+              <h3 className="font-bold text-base text-[#171B1F]">Reliability</h3>
+              <p className="text-xs text-gray-500 mt-2 leading-relaxed">
+                Proven vehicles, heavy trucks, and tyres that endure harsh operational roads.
               </p>
             </div>
 
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-full bg-[#FDF2F2] text-[#C91F26] flex items-center justify-center border border-red-100">
-                <MapPin className="w-5 h-5" />
+            <div className="p-6 rounded-lg border border-[#E3E4E6] bg-[#FAFAFA] text-center hover:border-gray-300 transition-all">
+              <div className="w-12 h-12 rounded-full bg-[#C91F26] text-white font-black text-xl flex items-center justify-center mx-auto mb-3 shadow-xs">
+                I
               </div>
-              <h3 className="font-bold text-base text-[#171B1F]">Nationwide Reach</h3>
-              <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                Serving commercial fleets, transport depots, and construction operations throughout Nigeria.
+              <h3 className="font-bold text-base text-[#171B1F]">Integrity</h3>
+              <p className="text-xs text-gray-500 mt-2 leading-relaxed">
+                Honest specifications, genuine components, and transparent business ethics.
               </p>
             </div>
 
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-full bg-[#FDF2F2] text-[#C91F26] flex items-center justify-center border border-red-100">
-                <Wrench className="w-5 h-5" />
+            <div className="p-6 rounded-lg border border-[#E3E4E6] bg-[#FAFAFA] text-center hover:border-gray-300 transition-all">
+              <div className="w-12 h-12 rounded-full bg-[#C91F26] text-white font-black text-xl flex items-center justify-center mx-auto mb-3 shadow-xs">
+                V
               </div>
-              <h3 className="font-bold text-base text-[#171B1F]">Professional Support</h3>
-              <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                Expert technical guidance on axle loadings, ply ratings, chassis configurations, and fuel efficiency.
+              <h3 className="font-bold text-base text-[#171B1F]">Value</h3>
+              <p className="text-xs text-gray-500 mt-2 leading-relaxed">
+                Competitive corporate pricing that reduces your fleet’s cost per kilometre.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-lg border border-[#E3E4E6] bg-[#FAFAFA] text-center hover:border-gray-300 transition-all">
+              <div className="w-12 h-12 rounded-full bg-[#C91F26] text-white font-black text-xl flex items-center justify-center mx-auto mb-3 shadow-xs">
+                E
+              </div>
+              <h3 className="font-bold text-base text-[#171B1F]">Excellence</h3>
+              <p className="text-xs text-gray-500 mt-2 leading-relaxed">
+                After-sales maintenance, expert advice, and uncompromising standards.
               </p>
             </div>
           </div>
@@ -213,6 +232,49 @@ export default function AboutPage() {
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   {client.desc}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VERIFIED CORPORATE CLIENTS matching Page 12 of company profile */}
+      <section className="py-16 bg-[#FAFAFA] border-t border-[#F0F0F0]">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-xl mx-auto mb-10">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#C91F26] mb-1 block">
+              OUR CUSTOMERS
+            </span>
+            <h2 className="text-3xl font-extrabold text-[#171B1F] tracking-tight">
+              Trusted by Industry Leaders
+            </h2>
+            <p className="text-sm text-gray-500 mt-2">
+              Proud partners and suppliers to premier manufacturing, FMCG, packaging, and commercial conglomerates.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+            {[
+              { name: 'Planet Bottling Company (PBC)', src: '/images/clients/planet_bottling_company.jpg' },
+              { name: 'Hello Products', src: '/images/clients/hello_products.png' },
+              { name: 'Euro Global Foods and Distilleries', src: '/images/clients/euro_global_foods.jpg' },
+              { name: 'Euromega Atlantic Nigeria', src: '/images/clients/euromega_atlantic.jpg' },
+              { name: 'Studio Press Packaging (SPN)', src: '/images/clients/studio_press_packaging.jpg' },
+              { name: 'TGI Group (Tropical General Investments)', src: '/images/clients/tgi_group.jpg' },
+            ].map((client, idx) => (
+              <div
+                key={idx}
+                className="bg-white border border-[#E3E4E6] rounded-lg p-4 h-24 flex items-center justify-center hover:border-gray-400 hover:shadow-xs transition-all"
+                title={client.name}
+              >
+                <div className="relative w-full h-full max-h-14">
+                  <Image
+                    src={client.src}
+                    alt={client.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             ))}
           </div>

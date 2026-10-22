@@ -16,11 +16,14 @@ export default function Footer() {
                 BBD <span className="text-[#C91F26]">AUTOS</span>
               </span>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Tyres · Trucks · Commercial Vehicles
+            <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider">
+              Vehicles · Industrial · Agro-Allied Equipment
             </p>
             <p className="text-gray-400 text-xs leading-relaxed max-w-xs">
-              Quality tyres, reliable commercial trucks and premium vehicles supplied for fleets, logistics, and businesses across Nigeria.
+              Quality commercial vehicles, heavy-duty trucks, industrial tyres, batteries and fleet solutions across Nigeria.
+            </p>
+            <p className="text-[11px] text-[#C91F26] font-bold tracking-widest uppercase">
+              DRIVING PERFORMANCE. DELIVERING TRUST.
             </p>
           </div>
 
@@ -95,24 +98,31 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#C91F26] shrink-0 mt-0.5" />
-                <span>Serving Nigeria</span>
+                <span className="text-xs leading-relaxed">
+                  20 Babayanju, Oshodi, Lagos, Nigeria
+                </span>
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-[#C91F26] shrink-0 mt-0.5" />
                 <div className="flex flex-col text-xs leading-relaxed">
+                  <a href="mailto:Sales@bbdautosng.com" className="hover:text-white transition-colors">
+                    Sales@bbdautosng.com
+                  </a>
                   <a href="mailto:Info@bbdautosng.com" className="hover:text-white transition-colors">
                     Info@bbdautosng.com
-                  </a>
-                  <a href="mailto:sales@bbdautosng.com" className="hover:text-white transition-colors">
-                    sales@bbdautosng.com
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-[#C91F26] shrink-0 mt-0.5" />
-                <a href="tel:+2349162030930" className="hover:text-white transition-colors text-xs font-semibold">
-                  +234 916 203 0930
-                </a>
+                <div className="flex flex-col text-xs leading-relaxed">
+                  <a href="tel:+2349039546124" className="hover:text-white transition-colors font-semibold">
+                    09039546124 / +234 903 954 6124
+                  </a>
+                  <a href="tel:+2349162030930" className="hover:text-white transition-colors text-gray-400">
+                    +234 916 203 0930
+                  </a>
+                </div>
               </li>
             </ul>
           </div>

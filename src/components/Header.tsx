@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ArrowRight, Menu, X, ShoppingBag } from 'lucide-react';
 import { useQuoteBasket } from '@/context/QuoteBasketContext';
@@ -57,10 +58,24 @@ export default function Header() {
       <header className="sticky top-0 z-40 bg-white border-b border-[#E3E4E6] transition-all">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1.5 focus:outline-none">
-            <span className="font-extrabold text-2xl tracking-tight text-[#171B1F]">
-              BBD <span className="text-[#C91F26]">AUTOS</span>
-            </span>
+          <Link href="/" className="flex items-center gap-2.5 focus:outline-none group">
+            <div className="relative w-11 h-8 shrink-0">
+              <Image
+                src="/images/brand/bbd_auto_logo.jpg"
+                alt="BBD Auto Official Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-extrabold text-2xl tracking-tight text-[#171B1F] leading-none">
+                BBD <span className="text-[#C91F26]">AUTOS</span>
+              </span>
+              <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-0.5 hidden sm:block">
+                Vehicles · Industrial · Agro
+              </span>
+            </div>
           </Link>
 
           {/* Center Navigation Links - Desktop */}

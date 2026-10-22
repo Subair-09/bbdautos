@@ -272,6 +272,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SECTION D2: VERIFIED CORPORATE CLIENTS */}
+      <section className="py-14 bg-white border-t border-[#F0F0F0]">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-xl mx-auto mb-8">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#C91F26] mb-1 block">
+              OUR CLIENTS & PARTNERS
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#171B1F] tracking-tight">
+              Trusted by Leading Nigerian Enterprises
+            </h2>
+            <p className="text-xs sm:text-sm text-gray-500 mt-1.5">
+              Providing dependable vehicle supply, commercial tyres and logistics equipment nationwide.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 items-center">
+            {[
+              { name: 'Planet Bottling Company (PBC)', src: '/images/clients/planet_bottling_company.jpg' },
+              { name: 'Hello Products', src: '/images/clients/hello_products.png' },
+              { name: 'Euro Global Foods and Distilleries', src: '/images/clients/euro_global_foods.jpg' },
+              { name: 'Euromega Atlantic Nigeria', src: '/images/clients/euromega_atlantic.jpg' },
+              { name: 'Studio Press Packaging (SPN)', src: '/images/clients/studio_press_packaging.jpg' },
+              { name: 'TGI Group (Tropical General Investments)', src: '/images/clients/tgi_group.jpg' },
+            ].map((client, idx) => (
+              <div
+                key={idx}
+                className="bg-[#FAFAFA] border border-[#E3E4E6] rounded-lg p-3.5 h-20 sm:h-22 flex items-center justify-center hover:border-gray-400 hover:bg-white hover:shadow-xs transition-all"
+                title={client.name}
+              >
+                <div className="relative w-full h-full max-h-12">
+                  <Image
+                    src={client.src}
+                    alt={client.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SECTION E: BULK QUOTATION CTA */}
       <section className="relative bg-[#171B1F] text-white overflow-hidden py-16 lg:py-20 border-t border-gray-800">
         {/* Tyre Tread Photographic Background */}
