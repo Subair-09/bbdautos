@@ -1,5 +1,50 @@
 [
   {
+    "fullName": "SUBAIR NURUDEEN ADEWALE",
+    "email": "binmatech@outlook.com",
+    "phone": "+2347033968648",
+    "deliveryLocation": "abuja",
+    "companyName": "SAN KIDS ACADEMY",
+    "businessType": "Construction & Civil Works",
+    "additionalNotes": "please trreat with caution",
+    "items": [
+      {
+        "productId": "prod-1792669282315",
+        "name": "Test Haulage Flatbed Semi-Trailer",
+        "brand": "Reliable Brand",
+        "category": "trucks",
+        "specificationSummary": "6x4 · Cargo",
+        "image": "/images/hero/red_heavy_truck_hd.jpg",
+        "quantity": 1,
+        "slug": "test-haulage-flatbed-semi-trailer-2315"
+      },
+      {
+        "productId": "prod-truck-tyre-295-80r22",
+        "name": "Truck Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "295/80R22.5 · Radial",
+        "image": "/images/products/commercial_truck_tyre.jpg",
+        "quantity": 1,
+        "slug": "truck-tyre-295-80r22-5"
+      },
+      {
+        "productId": "prod-bus-tyre-315-80r22",
+        "name": "Bus Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "315/80R22.5 · Radial",
+        "image": "/images/products/commercial_truck_tyre.jpg",
+        "quantity": 1,
+        "slug": "bus-tyre-315-80r22-5"
+      }
+    ],
+    "id": "RFQ-2026-8888",
+    "createdAt": "2026-10-22T14:43:56.381Z",
+    "status": "New",
+    "internalNotes": []
+  },
+  {
     "fullName": "Emeka Okafor",
     "email": "emeka.okafor@trans-nigeria-logistics.com",
     "phone": "+234 803 111 2233",
