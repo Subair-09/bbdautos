@@ -103,6 +103,7 @@ function handleQuoteRequest(data) {
 
   // Send email to Info@bbdautosng.com, sales@bbdautosng.com
   GmailApp.sendEmail(recipient, subject, "New Quote Request: " + rfqId + " from " + fullName + " (" + email + ", " + phone + ")", {
+    name: "BBD Autos Quotations",
     htmlBody: htmlBody,
     replyTo: email
   });
@@ -152,6 +153,7 @@ function handleContactMessage(data) {
   var recipient = data.targetEmail || RECIPIENT_EMAIL;
 
   GmailApp.sendEmail(recipient, emailSubject, message, {
+    name: "BBD Autos Contact Desk",
     htmlBody: htmlBody,
     replyTo: email
   });
