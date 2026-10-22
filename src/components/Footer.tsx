@@ -138,14 +138,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 gap-4">
           <p>© {currentYear} BBD Autos. All rights reserved.</p>
-          <div className="flex items-center space-x-6">
-            <Link href="/privacy" className="hover:text-gray-400 transition-colors">
+
+          <p className="text-xs text-gray-400 flex items-center gap-1.5 order-last md:order-none">
+            <span>Designed &amp; Developed by</span>
+            <span className="text-white font-semibold tracking-wide hover:text-[#C91F26] transition-colors">
+              Quotients Digital Horizon Ltd
+            </span>
+          </p>
+
+          <div className="flex items-center space-x-6 text-gray-400">
+            <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
             <span className="text-gray-700">|</span>
-            <Link href="/terms" className="hover:text-gray-400 transition-colors">
+            <Link href="/terms" className="hover:text-white transition-colors">
               Terms & Conditions
             </Link>
           </div>
