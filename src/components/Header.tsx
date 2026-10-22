@@ -58,8 +58,8 @@ export default function Header() {
       <header className="sticky top-0 z-40 bg-white border-b border-[#E3E4E6] transition-all">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 focus:outline-none group">
-            <div className="relative w-11 h-8 shrink-0">
+          <Link href="/" className="flex items-center gap-3 focus:outline-none group">
+            <div className="relative w-14 h-10 sm:w-16 sm:h-11 shrink-0 bg-white p-1 rounded border border-gray-200/80 shadow-2xs">
               <Image
                 src="/images/brand/bbd_auto_logo.jpg"
                 alt="BBD Auto Official Logo"
@@ -72,8 +72,8 @@ export default function Header() {
               <span className="font-extrabold text-2xl tracking-tight text-[#171B1F] leading-none">
                 BBD <span className="text-[#C91F26]">AUTOS</span>
               </span>
-              <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-0.5 hidden sm:block">
-                Vehicles · Industrial · Agro
+              <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-1 hidden sm:block">
+                Vehicles · Industrial · Agro-Allied
               </span>
             </div>
           </Link>

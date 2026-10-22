@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
@@ -11,8 +12,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-gray-800">
           {/* Column 1: Brand */}
           <div className="space-y-4">
-            <Link href="/" className="inline-block">
-              <span className="font-extrabold text-2xl tracking-tight text-white">
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <div className="relative w-14 h-10 bg-white rounded p-1 shrink-0 shadow-xs border border-gray-200">
+                <Image
+                  src="/images/brand/bbd_auto_logo.jpg"
+                  alt="BBD Auto Official Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span className="font-extrabold text-2xl tracking-tight text-white group-hover:text-gray-100 transition-colors">
                 BBD <span className="text-[#C91F26]">AUTOS</span>
               </span>
             </Link>

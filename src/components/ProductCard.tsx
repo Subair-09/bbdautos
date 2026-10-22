@@ -39,14 +39,14 @@ export default function ProductCard({ product, primaryAction = 'add' }: ProductC
   return (
     <div className="group bg-white border border-[#E3E4E6] rounded-lg overflow-hidden flex flex-col hover:border-gray-300 hover:shadow-md transition-all duration-200">
       {/* Product Image */}
-      <Link href={`/products/${product.slug}`} className="block relative bg-white aspect-[4/3] p-4 overflow-hidden border-b border-[#F0F0F0]">
+      <Link href={`/products/${product.slug}`} className="block relative bg-white aspect-[4/3] p-3 overflow-hidden border-b border-[#F0F0F0]">
         <div className="relative w-full h-full">
           <Image
             src={product.image}
             alt={product.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-            className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+            className="object-contain p-1 group-hover:scale-105 transition-transform duration-300"
           />
         </div>
         {product.inStock && (

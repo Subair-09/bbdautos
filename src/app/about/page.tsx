@@ -264,14 +264,15 @@ export default function AboutPage() {
             ].map((client, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-[#E3E4E6] rounded-lg p-4 h-24 flex items-center justify-center hover:border-gray-400 hover:shadow-xs transition-all"
+                className="bg-white border border-[#E3E4E6] rounded-xl p-4 sm:p-5 h-28 sm:h-32 lg:h-36 flex items-center justify-center hover:border-gray-400 hover:shadow-md transition-all group"
                 title={client.name}
               >
-                <div className="relative w-full h-full max-h-14">
+                <div className="relative w-full h-full max-h-20 sm:max-h-24 group-hover:scale-105 transition-transform duration-200">
                   <Image
                     src={client.src}
                     alt={client.name}
                     fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                     className="object-contain"
                   />
                 </div>

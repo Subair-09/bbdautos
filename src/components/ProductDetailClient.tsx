@@ -80,7 +80,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-16">
           {/* Left: Product Images */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="relative aspect-square sm:aspect-[4/3] bg-white border border-[#E3E4E6] rounded-lg p-6 overflow-hidden">
+            <div className="relative aspect-square sm:aspect-[4/3] bg-white border border-[#E3E4E6] rounded-lg p-3 sm:p-4 overflow-hidden">
               <div className="relative w-full h-full">
                 <Image
                   src={activeImage}
@@ -88,7 +88,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain p-4"
+                  className="object-contain p-1.5"
                 />
               </div>
             </div>
