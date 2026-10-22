@@ -1,5 +1,50 @@
 [
   {
+    "fullName": "Adebayo Salami",
+    "email": "info@skill-sch.com",
+    "phone": "+2349033927013",
+    "deliveryLocation": "LaGOS",
+    "companyName": "BAKED BY DOJA",
+    "businessType": "Corporate Fleet",
+    "additionalNotes": "YES O VERY GOODF WORK",
+    "items": [
+      {
+        "productId": "prod-foton-tm3",
+        "name": "Foton TM3 Small Commercial Truck",
+        "brand": "Foton",
+        "category": "trucks",
+        "specificationSummary": "6x4 · Cargo",
+        "image": "/images/products/foton_tm3.jpg",
+        "quantity": 1,
+        "slug": "foton-tm3"
+      },
+      {
+        "productId": "prod-forland-2-ton",
+        "name": "Forland 2-Ton Light Cargo Truck",
+        "brand": "Forland",
+        "category": "trucks",
+        "specificationSummary": "6x4 · Cargo",
+        "image": "/images/products/forland_2_ton.jpg",
+        "quantity": 1,
+        "slug": "forland-2-ton"
+      },
+      {
+        "productId": "prod-soueast-s07",
+        "name": "Soueast S07",
+        "brand": "Soueast",
+        "category": "vehicles",
+        "specificationSummary": "4x4 · Mid-Size Passenger SUV",
+        "image": "/images/products/soueast_s07.jpg",
+        "quantity": 1,
+        "slug": "soueast-s07"
+      }
+    ],
+    "id": "RFQ-2026-2197",
+    "createdAt": "2026-10-22T16:25:28.334Z",
+    "status": "New",
+    "internalNotes": []
+  },
+  {
     "fullName": "Faridah Adedoja Adeyemi",
     "email": "adeyemifaridah23@gmail.com",
     "phone": "+2347025566294",
