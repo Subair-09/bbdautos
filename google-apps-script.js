@@ -2,7 +2,7 @@
  * BBD AUTOS — Google Apps Script for Quotations & Enquiries
  * 
  * Automatically sends incoming quotation requests and contact enquiries
- * directly to: nuddywale@gmail.com
+ * directly to: Info@bbdautosng.com, sales@bbdautosng.com
  * 
  * HOW TO DEPLOY IN 2 MINUTES:
  * 1. Go to https://script.google.com (or in a new Google Sheet: Extensions > Apps Script)
@@ -18,7 +18,7 @@
  *     GOOGLE_SCRIPT_URL="https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec"
  */
 
-const RECIPIENT_EMAIL = "nuddywale@gmail.com";
+const RECIPIENT_EMAIL = "Info@bbdautosng.com, sales@bbdautosng.com";
 
 function doPost(e) {
   try {
@@ -94,13 +94,15 @@ function handleQuoteRequest(data) {
     itemsHtml +
 
     '<div style="margin-top:24px;padding:12px;background:#F5F5F5;border-radius:4px;font-size:11px;color:#6B7077;text-align:center;">' +
-      'Sent automatically from BBD Autos web quotation system to <strong>' + RECIPIENT_EMAIL + '</strong>.<br>' +
+      'Sent automatically from BBD Autos web quotation system to <strong>' + (data.targetEmail || RECIPIENT_EMAIL) + '</strong>.<br>' +
       'You can reply directly to this email to contact <strong>' + fullName + '</strong>.' +
     '</div>' +
   '</div>';
 
-  // Send email to nuddywale@gmail.com
-  GmailApp.sendEmail(RECIPIENT_EMAIL, subject, "New Quote Request: " + rfqId + " from " + fullName + " (" + email + ", " + phone + ")", {
+  var recipient = data.targetEmail || RECIPIENT_EMAIL;
+
+  // Send email to Info@bbdautosng.com, sales@bbdautosng.com
+  GmailApp.sendEmail(recipient, subject, "New Quote Request: " + rfqId + " from " + fullName + " (" + email + ", " + phone + ")", {
     htmlBody: htmlBody,
     replyTo: email
   });
@@ -144,10 +146,12 @@ function handleContactMessage(data) {
     '<div style="background:#F9FAFB;padding:16px;border-radius:6px;border:1px solid #E5E7EB;margin:16px 0;">' +
       '<p style="margin:0;white-space:pre-wrap;">' + message + '</p>' +
     '</div>' +
-    '<p style="font-size:12px;color:#666;">Routed automatically to ' + RECIPIENT_EMAIL + '</p>' +
+    '<p style="font-size:12px;color:#666;">Routed automatically to ' + (data.targetEmail || RECIPIENT_EMAIL) + '</p>' +
   '</div>';
 
-  GmailApp.sendEmail(RECIPIENT_EMAIL, emailSubject, message, {
+  var recipient = data.targetEmail || RECIPIENT_EMAIL;
+
+  GmailApp.sendEmail(recipient, emailSubject, message, {
     htmlBody: htmlBody,
     replyTo: email
   });

@@ -1,6 +1,6 @@
 import { QuoteRequest, ContactMessage } from '@/types';
 
-const NOTIFICATION_EMAIL = 'nuddywale@gmail.com';
+const NOTIFICATION_EMAIL = 'Info@bbdautosng.com, sales@bbdautosng.com';
 
 export async function sendQuoteToGoogleAppsScript(quote: QuoteRequest): Promise<boolean> {
   const scriptUrl = process.env.GOOGLE_SCRIPT_URL;

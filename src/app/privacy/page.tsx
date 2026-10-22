@@ -41,7 +41,7 @@ export default function PrivacyPage() {
 
           <h3 className="text-base font-bold text-[#171B1F] pt-2">4. Contact</h3>
           <p>
-            For any enquiries regarding this privacy policy or your stored quotation requests, please contact our administrative desk at sales@bbdautos.com.
+            For any enquiries regarding this privacy policy or your stored quotation requests, please contact our team at Info@bbdautosng.com or sales@bbdautosng.com.
           </p>
         </div>
       </div>

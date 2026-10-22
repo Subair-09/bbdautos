@@ -99,15 +99,20 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-[#C91F26] shrink-0 mt-0.5" />
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Email us
-                </Link>
+                <div className="flex flex-col text-xs leading-relaxed">
+                  <a href="mailto:Info@bbdautosng.com" className="hover:text-white transition-colors">
+                    Info@bbdautosng.com
+                  </a>
+                  <a href="mailto:sales@bbdautosng.com" className="hover:text-white transition-colors">
+                    sales@bbdautosng.com
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-[#C91F26] shrink-0 mt-0.5" />
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Commercial Sales Enquiries
-                </Link>
+                <a href="tel:+2349162030930" className="hover:text-white transition-colors text-xs font-semibold">
+                  +234 916 203 0930
+                </a>
               </li>
             </ul>
           </div>

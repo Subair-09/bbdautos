@@ -118,25 +118,44 @@ export default function ContactPage() {
                 <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
                   Send us a message and we'll respond as soon as possible.
                 </p>
-                <p className="text-xs font-semibold text-[#171B1F] mt-1">
-                  sales@bbdautos.com · enquiries@bbdautos.com
-                </p>
+                <div className="flex flex-col gap-1 text-xs font-semibold text-[#171B1F] mt-1.5">
+                  <a href="mailto:Info@bbdautosng.com" className="hover:text-[#C91F26] transition-colors">
+                    Info@bbdautosng.com
+                  </a>
+                  <a href="mailto:sales@bbdautosng.com" className="hover:text-[#C91F26] transition-colors">
+                    sales@bbdautosng.com
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* WhatsApp / Direct Enquiries */}
+            {/* Direct Enquiries / Phone */}
             <div className="flex items-start gap-4 p-5 rounded-lg border border-[#E3E4E6] bg-[#FAFAFA]">
               <div className="w-10 h-10 rounded-full bg-[#FDF2F2] text-[#C91F26] flex items-center justify-center shrink-0 border border-red-100">
-                <MessageSquare className="w-5 h-5" />
+                <Phone className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-sm text-[#171B1F]">Commercial Sales Desk</h4>
+                <h4 className="font-bold text-sm text-[#171B1F]">Commercial Sales Desk & WhatsApp</h4>
                 <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
                   Connect with our commercial desk for quick product verification, specification sheets, and quote tracking.
                 </p>
-                <p className="text-xs font-semibold text-[#171B1F] mt-1">
-                  +234 800 223 2886
-                </p>
+                <div className="flex items-center gap-3 mt-1.5">
+                  <a
+                    href="tel:+2349162030930"
+                    className="text-xs font-bold text-[#171B1F] hover:text-[#C91F26] transition-colors"
+                  >
+                    +234 916 203 0930
+                  </a>
+                  <span className="text-gray-300">|</span>
+                  <a
+                    href="https://wa.me/2349162030930"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-semibold text-[#C91F26] hover:underline"
+                  >
+                    Chat on WhatsApp &rarr;
+                  </a>
+                </div>
               </div>
             </div>
 
