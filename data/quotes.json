@@ -5,6 +5,41 @@
     "phone": "+2347033968648",
     "deliveryLocation": "abuja",
     "companyName": "SAN KIDS ACADEMY",
+    "businessType": "Mining & Quarry Operations",
+    "additionalNotes": "yyyyy",
+    "items": [
+      {
+        "productId": "prod-truck-tyre-295-80r22",
+        "name": "Truck Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "295/80R22.5 · Radial",
+        "image": "/images/products/commercial_truck_tyre.jpg",
+        "quantity": 1,
+        "slug": "truck-tyre-295-80r22-5"
+      },
+      {
+        "productId": "prod-bus-tyre-315-80r22",
+        "name": "Bus Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "315/80R22.5 · Radial",
+        "image": "/images/products/commercial_truck_tyre.jpg",
+        "quantity": 1,
+        "slug": "bus-tyre-315-80r22-5"
+      }
+    ],
+    "id": "RFQ-2026-7919",
+    "createdAt": "2026-10-22T14:55:36.455Z",
+    "status": "New",
+    "internalNotes": []
+  },
+  {
+    "fullName": "SUBAIR NURUDEEN ADEWALE",
+    "email": "binmatech@outlook.com",
+    "phone": "+2347033968648",
+    "deliveryLocation": "abuja",
+    "companyName": "SAN KIDS ACADEMY",
     "businessType": "Construction & Civil Works",
     "additionalNotes": "please trreat with caution",
     "items": [

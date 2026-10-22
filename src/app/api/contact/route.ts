@@ -45,10 +45,12 @@ export async function POST(request: NextRequest) {
       message: message.trim(),
     });
 
-    // Dispatch notification to Google Apps Script (nuddywale@gmail.com)
-    sendContactToGoogleAppsScript(saved).catch((err) => {
-      console.error('Async Google Apps Script dispatch error:', err);
-    });
+    // Dispatch notification to Google Apps Script (Info@bbdautosng.com, sales@bbdautosng.com)
+    try {
+      await sendContactToGoogleAppsScript(saved);
+    } catch (notifyErr) {
+      console.error('Google Apps Script contact dispatch error:', notifyErr);
+    }
 
     return NextResponse.json({
       success: true,

@@ -84,10 +84,12 @@ export async function POST(request: NextRequest) {
       items: sanitizedItems,
     });
 
-    // Dispatch notification to Google Apps Script (nuddywale@gmail.com)
-    sendQuoteToGoogleAppsScript(newQuote).catch((err) => {
-      console.error('Async Google Apps Script dispatch error:', err);
-    });
+    // Dispatch notification to Google Apps Script (Info@bbdautosng.com, sales@bbdautosng.com)
+    try {
+      await sendQuoteToGoogleAppsScript(newQuote);
+    } catch (notifyErr) {
+      console.error('Google Apps Script notification error:', notifyErr);
+    }
 
     return NextResponse.json({
       success: true,
