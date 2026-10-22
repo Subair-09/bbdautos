@@ -4,8 +4,17 @@ const NOTIFICATION_EMAIL = 'Info@bbdautosng.com, sales@bbdautosng.com';
 const DEFAULT_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbyjth1Fg3aOkwgQiU9-I4QOtspeb2JfEnKV5sY3LrI1x6gPp3b9hVdqvNQaQHD8AlrAtw/exec';
 
+function getScriptUrl(): string {
+  return (
+    process.env.GOOGLE_SCRIPT_URL ||
+    process.env.GOOGLE_APPS_SCRIPT_URL ||
+    process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL ||
+    DEFAULT_SCRIPT_URL
+  );
+}
+
 export async function sendQuoteToGoogleAppsScript(quote: QuoteRequest): Promise<boolean> {
-  const scriptUrl = process.env.GOOGLE_SCRIPT_URL || DEFAULT_SCRIPT_URL;
+  const scriptUrl = getScriptUrl();
 
   const payload = {
     type: 'quote_request',
@@ -62,7 +71,7 @@ export async function sendQuoteToGoogleAppsScript(quote: QuoteRequest): Promise<
 }
 
 export async function sendContactToGoogleAppsScript(message: ContactMessage): Promise<boolean> {
-  const scriptUrl = process.env.GOOGLE_SCRIPT_URL || DEFAULT_SCRIPT_URL;
+  const scriptUrl = getScriptUrl();
 
   const payload = {
     type: 'contact_message',

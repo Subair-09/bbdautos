@@ -37,19 +37,34 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const saved = saveMessage({
-      fullName: fullName.trim(),
-      email: email.trim().toLowerCase(),
-      phone: phone ? String(phone).trim() : undefined,
-      subject: subject ? String(subject).trim() : 'General Commercial Enquiry',
-      message: message.trim(),
-    });
+    let saved;
+    try {
+      saved = saveMessage({
+        fullName: fullName.trim(),
+        email: email.trim().toLowerCase(),
+        phone: phone ? String(phone).trim() : undefined,
+        subject: subject ? String(subject).trim() : 'General Commercial Enquiry',
+        message: message.trim(),
+      });
+    } catch (saveErr) {
+      console.warn('[Contact API] Local save fallback:', saveErr);
+      saved = {
+        id: `MSG-${Date.now()}`,
+        fullName: fullName.trim(),
+        email: email.trim().toLowerCase(),
+        phone: phone ? String(phone).trim() : undefined,
+        subject: subject ? String(subject).trim() : 'General Commercial Enquiry',
+        message: message.trim(),
+        createdAt: new Date().toISOString(),
+        status: 'Unread' as const,
+      };
+    }
 
     // Dispatch notification to Google Apps Script (Info@bbdautosng.com, sales@bbdautosng.com)
     try {
       await sendContactToGoogleAppsScript(saved);
     } catch (notifyErr) {
-      console.error('Google Apps Script contact dispatch error:', notifyErr);
+      console.error('[Contact API] Google Apps Script contact dispatch error:', notifyErr);
     }
 
     return NextResponse.json({
@@ -58,8 +73,9 @@ export async function POST(request: NextRequest) {
       data: saved,
     });
   } catch (err: any) {
+    console.error('[Contact API] Error handling contact submission:', err);
     return NextResponse.json(
-      { success: false, error: 'Failed to submit message. Please try again.' },
+      { success: false, error: err?.message || 'Failed to submit message. Please try again.' },
       { status: 500 }
     );
   }

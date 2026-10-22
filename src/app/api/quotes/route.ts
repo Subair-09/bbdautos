@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Sanitize and save
+    // Sanitize items
     const sanitizedItems = items.map((item) => ({
       productId: String(item.productId || ''),
       name: String(item.name || ''),
@@ -73,22 +73,42 @@ export async function POST(request: NextRequest) {
       slug: String(item.slug || ''),
     }));
 
-    const newQuote = createQuote({
-      fullName: fullName.trim(),
-      email: email.trim().toLowerCase(),
-      phone: phone.trim(),
-      deliveryLocation: deliveryLocation.trim(),
-      companyName: companyName ? companyName.trim() : undefined,
-      businessType: businessType ? businessType.trim() : undefined,
-      additionalNotes: additionalNotes ? additionalNotes.trim() : undefined,
-      items: sanitizedItems,
-    });
+    let newQuote;
+    try {
+      newQuote = createQuote({
+        fullName: fullName.trim(),
+        email: email.trim().toLowerCase(),
+        phone: phone.trim(),
+        deliveryLocation: deliveryLocation.trim(),
+        companyName: companyName ? companyName.trim() : undefined,
+        businessType: businessType ? businessType.trim() : undefined,
+        additionalNotes: additionalNotes ? additionalNotes.trim() : undefined,
+        items: sanitizedItems,
+      });
+    } catch (saveErr) {
+      console.warn('[Quotes API] Local createQuote fallback:', saveErr);
+      const randomSuffix = Math.floor(1000 + Math.random() * 9000);
+      newQuote = {
+        id: `RFQ-2026-${randomSuffix}`,
+        fullName: fullName.trim(),
+        email: email.trim().toLowerCase(),
+        phone: phone.trim(),
+        deliveryLocation: deliveryLocation.trim(),
+        companyName: companyName ? companyName.trim() : undefined,
+        businessType: businessType ? businessType.trim() : undefined,
+        additionalNotes: additionalNotes ? additionalNotes.trim() : undefined,
+        items: sanitizedItems,
+        createdAt: new Date().toISOString(),
+        status: 'New' as const,
+        internalNotes: [],
+      };
+    }
 
     // Dispatch notification to Google Apps Script (Info@bbdautosng.com, sales@bbdautosng.com)
     try {
       await sendQuoteToGoogleAppsScript(newQuote);
     } catch (notifyErr) {
-      console.error('Google Apps Script notification error:', notifyErr);
+      console.error('[Quotes API] Google Apps Script notification error:', notifyErr);
     }
 
     return NextResponse.json({
@@ -97,9 +117,9 @@ export async function POST(request: NextRequest) {
       message: 'Quotation request submitted successfully.',
     });
   } catch (err: any) {
-    console.error('Failed to process quote:', err);
+    console.error('[Quotes API] Error handling quote submission:', err);
     return NextResponse.json(
-      { success: false, error: 'An unexpected server error occurred. Please try again.' },
+      { success: false, error: err?.message || 'An unexpected error occurred. Please try again.' },
       { status: 500 }
     );
   }

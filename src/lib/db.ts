@@ -1,17 +1,72 @@
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 import { Product, QuoteRequest, ContactMessage } from '@/types';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
+const TMP_DATA_DIR = path.join(os.tmpdir(), 'bbdautos-data');
+
 const PRODUCTS_FILE = path.join(DATA_DIR, 'products.json');
 const QUOTES_FILE = path.join(DATA_DIR, 'quotes.json');
 const MESSAGES_FILE = path.join(DATA_DIR, 'messages.json');
 
-function ensureDataDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+const TMP_PRODUCTS_FILE = path.join(TMP_DATA_DIR, 'products.json');
+const TMP_QUOTES_FILE = path.join(TMP_DATA_DIR, 'quotes.json');
+const TMP_MESSAGES_FILE = path.join(TMP_DATA_DIR, 'messages.json');
+
+function safeWriteJson(mainFile: string, tmpFile: string, data: any): void {
+  const content = JSON.stringify(data, null, 2);
+  // 1. Attempt writing to local project data dir (local dev, VPS, Docker)
+  try {
+    const dir = path.dirname(mainFile);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(mainFile, content, 'utf-8');
+    return;
+  } catch {
+    // Expected on read-only environments like Vercel / AWS Lambda
+  }
+
+  // 2. Fallback writing to serverless /tmp writable directory
+  try {
+    const tmpDir = path.dirname(tmpFile);
+    if (!fs.existsSync(tmpDir)) {
+      fs.mkdirSync(tmpDir, { recursive: true });
+    }
+    fs.writeFileSync(tmpFile, content, 'utf-8');
+  } catch (tmpErr) {
+    console.warn('[Storage] Notice: unable to write to tmp file:', tmpErr);
   }
 }
+
+function safeReadJson<T>(mainFile: string, tmpFile: string, fallback: T): T {
+  // 1. Check if updated copy exists in /tmp
+  try {
+    if (fs.existsSync(tmpFile)) {
+      const raw = fs.readFileSync(tmpFile, 'utf-8');
+      return JSON.parse(raw);
+    }
+  } catch {
+    // ignore
+  }
+
+  // 2. Check bundled file in project repository
+  try {
+    if (fs.existsSync(mainFile)) {
+      const raw = fs.readFileSync(mainFile, 'utf-8');
+      return JSON.parse(raw);
+    }
+  } catch {
+    // ignore
+  }
+
+  return fallback;
+}
+
+let memoryProducts: Product[] | null = null;
+let memoryQuotes: QuoteRequest[] | null = null;
+let memoryMessages: ContactMessage[] | null = null;
 
 const INITIAL_PRODUCTS: Product[] = [
   {
@@ -839,23 +894,17 @@ const INITIAL_PRODUCTS: Product[] = [
 ];
 
 export function getProducts(): Product[] {
-  ensureDataDir();
-  if (!fs.existsSync(PRODUCTS_FILE)) {
-    fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(INITIAL_PRODUCTS, null, 2), 'utf-8');
-    return INITIAL_PRODUCTS;
+  if (memoryProducts && memoryProducts.length > 0) {
+    return memoryProducts;
   }
-  try {
-    const raw = fs.readFileSync(PRODUCTS_FILE, 'utf-8');
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error('Error reading products:', err);
-    return INITIAL_PRODUCTS;
-  }
+  const loaded = safeReadJson<Product[]>(PRODUCTS_FILE, TMP_PRODUCTS_FILE, INITIAL_PRODUCTS);
+  memoryProducts = loaded && loaded.length > 0 ? loaded : INITIAL_PRODUCTS;
+  return memoryProducts;
 }
 
 export function saveProducts(products: Product[]): void {
-  ensureDataDir();
-  fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2), 'utf-8');
+  memoryProducts = products;
+  safeWriteJson(PRODUCTS_FILE, TMP_PRODUCTS_FILE, products);
 }
 
 export function getProductBySlug(slug: string): Product | undefined {
@@ -886,101 +935,17 @@ export function deleteProduct(id: string): boolean {
 }
 
 export function getQuotes(): QuoteRequest[] {
-  ensureDataDir();
-  if (!fs.existsSync(QUOTES_FILE)) {
-    // Seed sample demonstration quotes for realistic admin review
-    const sampleQuotes: QuoteRequest[] = [
-      {
-        id: 'RFQ-2026-1042',
-        createdAt: new Date(Date.now() - 3600000 * 4).toISOString(),
-        status: 'New',
-        companyName: 'Dangote Transport & Logistics',
-        businessType: 'Fleet Logistics Operator',
-        fullName: 'Alhaji Ibrahim Musa',
-        email: 'i.musa@dangotegroup-sample.com',
-        phone: '+234 803 456 7890',
-        deliveryLocation: 'Ikeja Depot, Lagos State',
-        additionalNotes: 'Urgent bulk requirement for Q1 fleet maintenance. Delivery required in Lagos within 10 days.',
-        items: [
-          {
-            productId: 'prod-truck-tyre-295-80r22',
-            name: 'Truck Tyre',
-            brand: 'Premium Brand',
-            category: 'tyres',
-            specificationSummary: '295/80R22.5 · Radial',
-            image: '/images/products/commercial_truck_tyre.jpg',
-            quantity: 40,
-            slug: 'truck-tyre-295-80r22-5'
-          },
-          {
-            productId: 'prod-heavy-duty-truck-6x4',
-            name: 'Heavy-Duty Truck',
-            brand: 'Reliable Brand',
-            category: 'trucks',
-            specificationSummary: '6x4 · Cargo',
-            image: '/images/hero/red_heavy_truck_hd.jpg',
-            quantity: 2,
-            slug: 'heavy-duty-truck-6x4-cargo'
-          }
-        ],
-        internalNotes: [
-          {
-            date: new Date(Date.now() - 3600000 * 2).toISOString(),
-            text: 'Verified client entity. Spoke with procurement head regarding tyre specs.',
-            author: 'Sales Desk'
-          }
-        ]
-      },
-      {
-        id: 'RFQ-2026-1039',
-        createdAt: new Date(Date.now() - 86400000 * 2).toISOString(),
-        status: 'Quotation Sent',
-        companyName: 'Julius Berger Civil Works',
-        businessType: 'Construction & Civil Engineering',
-        fullName: 'Engr. Babatunde Adeleke',
-        email: 'babatunde.adeleke@jb-sample.com',
-        phone: '+234 802 334 1122',
-        deliveryLocation: 'Abuja Central Terminal, FCT',
-        additionalNotes: 'Quote needed for heavy tipper supply and spare tyres for earthmoving works.',
-        items: [
-          {
-            productId: 'prod-heavy-tipper-truck-380',
-            name: 'Heavy-Duty Tipper Truck',
-            brand: 'Reliable Brand',
-            category: 'trucks',
-            specificationSummary: '6x4 · Tipper 380HP',
-            image: '/images/hero/red_heavy_truck_hd.jpg',
-            quantity: 4,
-            slug: 'heavy-duty-tipper-truck-6x4-380hp'
-          },
-          {
-            productId: 'prod-tyre-1200r20-heavy-lug',
-            name: 'Heavy Lug Mining & Construction Tyre',
-            brand: 'Premium Brand',
-            category: 'tyres',
-            specificationSummary: '12.00R20 · 20PR',
-            image: '/images/cat_tyres.jpg',
-            quantity: 24,
-            slug: 'tyre-1200r20-heavy-lug-construction'
-          }
-        ]
-      }
-    ];
-    fs.writeFileSync(QUOTES_FILE, JSON.stringify(sampleQuotes, null, 2), 'utf-8');
-    return sampleQuotes;
+  if (memoryQuotes && memoryQuotes.length > 0) {
+    return memoryQuotes;
   }
-  try {
-    const raw = fs.readFileSync(QUOTES_FILE, 'utf-8');
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error('Error reading quotes:', err);
-    return [];
-  }
+  const loaded = safeReadJson<QuoteRequest[]>(QUOTES_FILE, TMP_QUOTES_FILE, []);
+  memoryQuotes = loaded;
+  return loaded;
 }
 
 export function saveQuotes(quotes: QuoteRequest[]): void {
-  ensureDataDir();
-  fs.writeFileSync(QUOTES_FILE, JSON.stringify(quotes, null, 2), 'utf-8');
+  memoryQuotes = quotes;
+  safeWriteJson(QUOTES_FILE, TMP_QUOTES_FILE, quotes);
 }
 
 export function getQuoteById(id: string): QuoteRequest | undefined {
@@ -991,7 +956,7 @@ export function getQuoteById(id: string): QuoteRequest | undefined {
 export function createQuote(data: Omit<QuoteRequest, 'id' | 'createdAt' | 'status'>): QuoteRequest {
   const quotes = getQuotes();
   const randomSuffix = Math.floor(1000 + Math.random() * 9000);
-  const id = `RFQ-2026-${randomSuffix}`;
+  const id = 'RFQ-2026-' + randomSuffix;
   const newQuote: QuoteRequest = {
     ...data,
     id,
@@ -1043,28 +1008,24 @@ export function addQuoteNote(id: string, text: string, author: string = 'Admin')
 }
 
 export function getMessages(): ContactMessage[] {
-  ensureDataDir();
-  if (!fs.existsSync(MESSAGES_FILE)) {
-    return [];
+  if (memoryMessages && memoryMessages.length > 0) {
+    return memoryMessages;
   }
-  try {
-    const raw = fs.readFileSync(MESSAGES_FILE, 'utf-8');
-    return JSON.parse(raw);
-  } catch (err) {
-    return [];
-  }
+  const loaded = safeReadJson<ContactMessage[]>(MESSAGES_FILE, TMP_MESSAGES_FILE, []);
+  memoryMessages = loaded;
+  return loaded;
 }
 
 export function saveMessage(data: Omit<ContactMessage, 'id' | 'createdAt' | 'status'>): ContactMessage {
-  ensureDataDir();
   const messages = getMessages();
   const msg: ContactMessage = {
     ...data,
-    id: `MSG-${Date.now()}`,
+    id: 'MSG-' + Date.now(),
     createdAt: new Date().toISOString(),
     status: 'Unread'
   };
   messages.unshift(msg);
-  fs.writeFileSync(MESSAGES_FILE, JSON.stringify(messages, null, 2), 'utf-8');
+  memoryMessages = messages;
+  safeWriteJson(MESSAGES_FILE, TMP_MESSAGES_FILE, messages);
   return msg;
 }
