@@ -1,0 +1,32 @@
+[
+  {
+    "fullName": "SUBAIR NURUDEEN",
+    "email": "nuddywale@gmail.com",
+    "phone": "07033968648",
+    "subject": "Truck Fleet Procurement",
+    "message": "heello buy",
+    "id": "MSG-1792671609364",
+    "createdAt": "2026-10-22T12:20:09.364Z",
+    "status": "Unread"
+  },
+  {
+    "fullName": "Amina Bello",
+    "email": "amina.bello@abuja-fleet.ng",
+    "phone": "+234 809 555 6677",
+    "subject": "Bulk Supply Enquiry",
+    "message": "Inquiring about 15-seater passenger buses for corporate staff mobility in Abuja.",
+    "id": "MSG-1792669282246",
+    "createdAt": "2026-10-22T11:41:22.246Z",
+    "status": "Unread"
+  },
+  {
+    "fullName": "Amina Bello",
+    "email": "amina.bello@abuja-fleet.ng",
+    "phone": "+234 809 555 6677",
+    "subject": "Bulk Supply Enquiry",
+    "message": "Inquiring about 15-seater passenger buses for corporate staff mobility in Abuja.",
+    "id": "MSG-1792669181972",
+    "createdAt": "2026-10-22T11:39:41.972Z",
+    "status": "Unread"
+  }
+]

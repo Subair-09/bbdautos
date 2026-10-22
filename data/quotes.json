@@ -1,0 +1,160 @@
+[
+  {
+    "fullName": "Emeka Okafor",
+    "email": "emeka.okafor@trans-nigeria-logistics.com",
+    "phone": "+234 803 111 2233",
+    "deliveryLocation": "Apapa Port Terminal, Lagos",
+    "companyName": "Trans-Nigeria Heavy Haulage Ltd",
+    "businessType": "Fleet Logistics Operator",
+    "additionalNotes": "Need 20 tyres and 2 heavy trucks delivered before month-end.",
+    "items": [
+      {
+        "productId": "prod-truck-tyre-295-80r22",
+        "name": "Truck Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "295/80R22.5 · Radial",
+        "image": "/images/products/commercial_truck_tyre.jpg",
+        "quantity": 20,
+        "slug": "truck-tyre-295-80r22-5"
+      },
+      {
+        "productId": "prod-heavy-duty-truck-6x4",
+        "name": "Heavy-Duty Truck",
+        "brand": "Reliable Brand",
+        "category": "trucks",
+        "specificationSummary": "6x4 · Cargo",
+        "image": "/images/hero/red_heavy_truck_hd.jpg",
+        "quantity": 2,
+        "slug": "heavy-duty-truck-6x4-cargo"
+      }
+    ],
+    "id": "RFQ-2026-6952",
+    "createdAt": "2026-10-22T11:41:22.225Z",
+    "status": "Under Review",
+    "internalNotes": [
+      {
+        "date": "2026-10-22T11:41:22.304Z",
+        "text": "Sales engineer assigned to review logistics",
+        "author": "Admin"
+      }
+    ],
+    "history": [
+      {
+        "status": "Under Review",
+        "changedAt": "2026-10-22T11:41:22.304Z",
+        "note": "Sales engineer assigned to review logistics"
+      }
+    ]
+  },
+  {
+    "fullName": "Emeka Okafor",
+    "email": "emeka.okafor@trans-nigeria-logistics.com",
+    "phone": "+234 803 111 2233",
+    "deliveryLocation": "Apapa Port Terminal, Lagos",
+    "companyName": "Trans-Nigeria Heavy Haulage Ltd",
+    "businessType": "Fleet Logistics Operator",
+    "additionalNotes": "Need 20 tyres and 2 heavy trucks delivered before month-end.",
+    "items": [
+      {
+        "productId": "prod-truck-tyre-295-80r22",
+        "name": "Truck Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "295/80R22.5 · Radial",
+        "image": "/images/products/commercial_truck_tyre.jpg",
+        "quantity": 20,
+        "slug": "truck-tyre-295-80r22-5"
+      },
+      {
+        "productId": "prod-heavy-duty-truck-6x4",
+        "name": "Heavy-Duty Truck",
+        "brand": "Reliable Brand",
+        "category": "trucks",
+        "specificationSummary": "6x4 · Cargo",
+        "image": "/images/hero/red_heavy_truck_hd.jpg",
+        "quantity": 2,
+        "slug": "heavy-duty-truck-6x4-cargo"
+      }
+    ],
+    "id": "RFQ-2026-8835",
+    "createdAt": "2026-10-22T11:39:41.953Z",
+    "status": "New",
+    "internalNotes": []
+  },
+  {
+    "id": "RFQ-2026-1042",
+    "createdAt": "2026-10-22T07:39:41.952Z",
+    "status": "New",
+    "companyName": "Dangote Transport & Logistics",
+    "businessType": "Fleet Logistics Operator",
+    "fullName": "Alhaji Ibrahim Musa",
+    "email": "i.musa@dangotegroup-sample.com",
+    "phone": "+234 803 456 7890",
+    "deliveryLocation": "Ikeja Depot, Lagos State",
+    "additionalNotes": "Urgent bulk requirement for Q1 fleet maintenance. Delivery required in Lagos within 10 days.",
+    "items": [
+      {
+        "productId": "prod-truck-tyre-295-80r22",
+        "name": "Truck Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "295/80R22.5 · Radial",
+        "image": "/images/products/commercial_truck_tyre.jpg",
+        "quantity": 40,
+        "slug": "truck-tyre-295-80r22-5"
+      },
+      {
+        "productId": "prod-heavy-duty-truck-6x4",
+        "name": "Heavy-Duty Truck",
+        "brand": "Reliable Brand",
+        "category": "trucks",
+        "specificationSummary": "6x4 · Cargo",
+        "image": "/images/hero/red_heavy_truck_hd.jpg",
+        "quantity": 2,
+        "slug": "heavy-duty-truck-6x4-cargo"
+      }
+    ],
+    "internalNotes": [
+      {
+        "date": "2026-10-22T09:39:41.952Z",
+        "text": "Verified client entity. Spoke with procurement head regarding tyre specs.",
+        "author": "Sales Desk"
+      }
+    ]
+  },
+  {
+    "id": "RFQ-2026-1039",
+    "createdAt": "2026-10-20T11:39:41.952Z",
+    "status": "Quotation Sent",
+    "companyName": "Julius Berger Civil Works",
+    "businessType": "Construction & Civil Engineering",
+    "fullName": "Engr. Babatunde Adeleke",
+    "email": "babatunde.adeleke@jb-sample.com",
+    "phone": "+234 802 334 1122",
+    "deliveryLocation": "Abuja Central Terminal, FCT",
+    "additionalNotes": "Quote needed for heavy tipper supply and spare tyres for earthmoving works.",
+    "items": [
+      {
+        "productId": "prod-heavy-tipper-truck-380",
+        "name": "Heavy-Duty Tipper Truck",
+        "brand": "Reliable Brand",
+        "category": "trucks",
+        "specificationSummary": "6x4 · Tipper 380HP",
+        "image": "/images/hero/red_heavy_truck_hd.jpg",
+        "quantity": 4,
+        "slug": "heavy-duty-tipper-truck-6x4-380hp"
+      },
+      {
+        "productId": "prod-tyre-1200r20-heavy-lug",
+        "name": "Heavy Lug Mining & Construction Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "12.00R20 · 20PR",
+        "image": "/images/cat_tyres.jpg",
+        "quantity": 24,
+        "slug": "tyre-1200r20-heavy-lug-construction"
+      }
+    ]
+  }
+]
