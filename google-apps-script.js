@@ -15,7 +15,7 @@
  * 8. Click "Deploy" and authorize the script.
  * 9. Copy the generated "Web App URL" (ends in /exec).
  * 10. Add it to your .env.local file in the bbdautos project:
- *     GOOGLE_SCRIPT_URL="https://script.google.com/macros/s/AKfycby1OocSspn0bfKSEHh9jcjpDioVG56pZ19KI0qfKUCD9a7Lzc_AA-MckNdBnflNn-1nAw/exec"
+ *     GOOGLE_SCRIPT_URL="https://script.google.com/macros/s/AKfycbxbyuhknunsRoA1n_ivLw0IMVPTloo8a1hyVylWRzpGi-t3J7qT-b-ImSXJ2G4NebEdFg/exec"
  */
 
 const RECIPIENT_EMAIL = "Info@bbdautosng.com, sales@bbdautosng.com";
