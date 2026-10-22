@@ -5,7 +5,7 @@ import { ArrowRight, ShieldCheck, Truck, MapPin } from 'lucide-react';
 import { getProducts } from '@/lib/db';
 import ProductCard from '@/components/ProductCard';
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export default function HomePage() {
   const allProducts = getProducts();

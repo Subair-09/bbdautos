@@ -4,12 +4,19 @@ import { getProductBySlug, getProducts } from '@/lib/db';
 import ProductDetailClient from '@/components/ProductDetailClient';
 import type { Metadata } from 'next';
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 interface Props {
   params: {
     slug: string;
   };
+}
+
+export async function generateStaticParams() {
+  const products = getProducts();
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

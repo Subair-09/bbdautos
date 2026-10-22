@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { getProducts } from '@/lib/db';
 import ProductCatalogueClient from '@/components/ProductCatalogueClient';
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export default function TyresPage() {
   const products = getProducts();
