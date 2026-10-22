@@ -51,6 +51,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
   const categoryLabel = {
     tyres: 'Tyres',
     trucks: 'Trucks',
+    batteries: 'Batteries',
     vehicles: 'Vehicles',
   }[product.category];
 

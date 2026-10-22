@@ -145,36 +145,8 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* 3 Category Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Tyres Card */}
-            <div className="bg-white border border-[#E3E4E6] rounded-lg overflow-hidden flex flex-col hover:border-gray-300 hover:shadow-md transition-all duration-200">
-              <div className="relative aspect-[16/10] bg-[#F8F9FA] p-4 border-b border-[#F0F0F0]">
-                <Image
-                  src="/images/categories/tyres_stack_hd.jpg"
-                  alt="Durable commercial tyres"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-contain p-2"
-                />
-              </div>
-              <div className="p-6 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-xl font-bold text-[#171B1F] mb-2">Tyres</h3>
-                  <p className="text-sm text-[#6B7077] leading-relaxed mb-6">
-                    Durable tyres for all types of vehicles and heavy-duty use.
-                  </p>
-                </div>
-                <Link
-                  href="/tyres"
-                  className="inline-flex items-center justify-between w-full py-2.5 px-4 rounded border border-[#E3E4E6] text-xs font-semibold text-[#171B1F] hover:border-[#C91F26] hover:text-[#C91F26] transition-colors"
-                >
-                  <span>Browse category</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#C91F26]" />
-                </Link>
-              </div>
-            </div>
-
+          {/* 4 Category Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Trucks Card */}
             <div className="bg-white border border-[#E3E4E6] rounded-lg overflow-hidden flex flex-col hover:border-gray-300 hover:shadow-md transition-all duration-200">
               <div className="relative aspect-[16/10] bg-[#F8F9FA] p-4 border-b border-[#F0F0F0]">
@@ -182,7 +154,7 @@ export default function HomePage() {
                   src="/images/categories/trucks_hd.jpg"
                   alt="Reliable heavy-duty commercial trucks"
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   className="object-contain p-2"
                 />
               </div>
@@ -203,6 +175,62 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Tyres Card */}
+            <div className="bg-white border border-[#E3E4E6] rounded-lg overflow-hidden flex flex-col hover:border-gray-300 hover:shadow-md transition-all duration-200">
+              <div className="relative aspect-[16/10] bg-[#F8F9FA] p-4 border-b border-[#F0F0F0]">
+                <Image
+                  src="/images/categories/tyres_stack_hd.jpg"
+                  alt="Durable commercial tyres"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="object-contain p-2"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-[#171B1F] mb-2">Tyres</h3>
+                  <p className="text-sm text-[#6B7077] leading-relaxed mb-6">
+                    Durable tyres for all types of vehicles and heavy-duty use.
+                  </p>
+                </div>
+                <Link
+                  href="/tyres"
+                  className="inline-flex items-center justify-between w-full py-2.5 px-4 rounded border border-[#E3E4E6] text-xs font-semibold text-[#171B1F] hover:border-[#C91F26] hover:text-[#C91F26] transition-colors"
+                >
+                  <span>Browse category</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#C91F26]" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Batteries Card */}
+            <div className="bg-white border border-[#E3E4E6] rounded-lg overflow-hidden flex flex-col hover:border-gray-300 hover:shadow-md transition-all duration-200">
+              <div className="relative aspect-[16/10] bg-[#F8F9FA] p-4 border-b border-[#F0F0F0]">
+                <Image
+                  src="/images/categories/batteries_hd.jpg"
+                  alt="High-performance automotive and commercial batteries"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="object-contain p-2"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-[#171B1F] mb-2">Batteries</h3>
+                  <p className="text-sm text-[#6B7077] leading-relaxed mb-6">
+                    Maintenance-free commercial and automotive batteries for Nigerian climates.
+                  </p>
+                </div>
+                <Link
+                  href="/batteries"
+                  className="inline-flex items-center justify-between w-full py-2.5 px-4 rounded border border-[#E3E4E6] text-xs font-semibold text-[#171B1F] hover:border-[#C91F26] hover:text-[#C91F26] transition-colors"
+                >
+                  <span>Browse category</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#C91F26]" />
+                </Link>
+              </div>
+            </div>
+
             {/* Vehicles Card */}
             <div className="bg-white border border-[#E3E4E6] rounded-lg overflow-hidden flex flex-col hover:border-gray-300 hover:shadow-md transition-all duration-200">
               <div className="relative aspect-[16/10] bg-[#F8F9FA] p-4 border-b border-[#F0F0F0]">
@@ -210,7 +238,7 @@ export default function HomePage() {
                   src="/images/categories/vehicles_pair_hd.jpg"
                   alt="Quality commercial and passenger vehicles"
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   className="object-contain p-2"
                 />
               </div>

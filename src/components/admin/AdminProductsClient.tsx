@@ -111,8 +111,8 @@ export default function AdminProductsClient({ initialProducts }: Props) {
 
       {/* Filter and Search Bar */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white p-4 rounded-xl border border-[#E3E4E6] shadow-2xs">
-        <div className="flex items-center gap-2 w-full sm:w-auto">
-          {(['all', 'tyres', 'trucks', 'vehicles'] as const).map((cat) => (
+        <div className="flex items-center gap-2 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
+          {(['all', 'trucks', 'tyres', 'batteries', 'vehicles'] as const).map((cat) => (
             <button
               key={cat}
               onClick={() => setCategoryFilter(cat)}

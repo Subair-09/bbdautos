@@ -70,6 +70,13 @@ export default function AdminNewProductPage() {
         { key: 'Payload Capacity', value: '30 Tonnes' },
         { key: 'Transmission', value: '10-Speed Manual' },
       ]);
+    } else if (cat === 'batteries') {
+      setSpecs([
+        { key: 'Voltage / Capacity', value: '12V 100Ah' },
+        { key: 'Cold Cranking Amps (CCA)', value: '850+ CCA' },
+        { key: 'Technology', value: 'Sealed Maintenance-Free (SMF)' },
+        { key: 'Warranty', value: '12 Months' },
+      ]);
     } else {
       setSpecs([
         { key: 'Model', value: '4x4 Executive' },
@@ -196,8 +203,9 @@ export default function AdminNewProductPage() {
                   onChange={(e) => handleCategoryChange(e.target.value as ProductCategory)}
                   className="w-full px-3.5 py-2 text-xs border border-gray-300 rounded bg-white font-medium focus:outline-none focus:border-[#C91F26]"
                 >
-                  <option value="tyres">Tyres</option>
                   <option value="trucks">Trucks</option>
+                  <option value="tyres">Tyres</option>
+                  <option value="batteries">Batteries</option>
                   <option value="vehicles">Vehicles</option>
                 </select>
               </div>

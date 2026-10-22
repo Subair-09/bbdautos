@@ -43,13 +43,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-gray-400">
               <li>
+                <Link href="/trucks" className="hover:text-white transition-colors">
+                  Trucks
+                </Link>
+              </li>
+              <li>
                 <Link href="/tyres" className="hover:text-white transition-colors">
                   Tyres
                 </Link>
               </li>
               <li>
-                <Link href="/trucks" className="hover:text-white transition-colors">
-                  Trucks
+                <Link href="/batteries" className="hover:text-white transition-colors">
+                  Batteries
                 </Link>
               </li>
               <li>

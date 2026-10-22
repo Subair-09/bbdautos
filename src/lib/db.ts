@@ -797,7 +797,7 @@ const INITIAL_PRODUCTS: Product[] = [
     "slug": "solite-automotive-battery",
     "name": "Solite Premium Automotive Starting Battery",
     "brand": "Solite",
-    "category": "tyres",
+    "category": "batteries",
     "subcategory": "Automotive & Commercial Batteries",
     "image": "/images/products/solite_automotive_battery.jpg",
     "galleryImages": [
@@ -822,7 +822,7 @@ const INITIAL_PRODUCTS: Product[] = [
     "slug": "rocket-heavy-duty-battery",
     "name": "Rocket Heavy-Duty Commercial Truck Battery",
     "brand": "Rocket",
-    "category": "tyres",
+    "category": "batteries",
     "subcategory": "Automotive & Commercial Batteries",
     "image": "/images/products/rocket_heavy_duty_battery.jpg",
     "galleryImages": [
@@ -847,7 +847,7 @@ const INITIAL_PRODUCTS: Product[] = [
     "slug": "bosch-commercial-battery",
     "name": "Bosch High-Performance Commercial Battery",
     "brand": "Bosch",
-    "category": "tyres",
+    "category": "batteries",
     "subcategory": "Automotive & Commercial Batteries",
     "image": "/images/products/bosch_commercial_battery.jpg",
     "galleryImages": [
@@ -872,7 +872,7 @@ const INITIAL_PRODUCTS: Product[] = [
     "slug": "runall-car-battery",
     "name": "Runall Commercial Vehicle Battery",
     "brand": "Runall",
-    "category": "tyres",
+    "category": "batteries",
     "subcategory": "Automotive & Commercial Batteries",
     "image": "/images/products/runall_car_battery.jpg",
     "galleryImages": [
@@ -890,6 +890,58 @@ const INITIAL_PRODUCTS: Product[] = [
     "inStock": true,
     "published": true,
     "createdAt": "2026-01-29T00:30:00Z"
+  },
+  {
+    "id": "prod-sebang-maintenance-free-battery",
+    "slug": "sebang-maintenance-free-battery",
+    "name": "Sebang Global Maintenance-Free Commercial Battery",
+    "brand": "Sebang",
+    "category": "batteries",
+    "subcategory": "Automotive & Commercial Batteries",
+    "image": "/images/products/sebang_maintenance_free_battery.jpg",
+    "galleryImages": [
+      "/images/products/sebang_maintenance_free_battery.jpg"
+    ],
+    "shortDescription": "Renowned Korean industrial battery delivering exceptional starting punch, zero acid leakage, and long cyclic resilience.",
+    "fullDescription": "Sebang Global batteries deliver high-rate discharge efficiency and rugged anti-vibration container construction. Engineered specifically for demanding multi-shift delivery vans, commercial transport buses, and heavy agricultural equipment across Nigeria.",
+    "specifications": {
+      "Brand": "Sebang",
+      "Application": "Commercial Buses, Light Trucks & Industrial Equipment",
+      "Voltage / Capacity": "12V 75Ah / 100Ah / 150Ah",
+      "Technology": "Sealed Maintenance-Free (SMF) Calcium-Tin Alloy",
+      "Origin": "South Korea",
+      "Warranty": "12 Months Manufacturer Warranty"
+    },
+    "featured": true,
+    "inStock": true,
+    "published": true,
+    "createdAt": "2026-01-29T01:00:00Z"
+  },
+  {
+    "id": "prod-everstart-premium-battery",
+    "slug": "everstart-premium-battery",
+    "name": "EverStart Premium Heavy-Duty Fleet Battery",
+    "brand": "EverStart",
+    "category": "batteries",
+    "subcategory": "Automotive & Commercial Batteries",
+    "image": "/images/products/everstart_premium_battery.jpg",
+    "galleryImages": [
+      "/images/products/everstart_premium_battery.jpg"
+    ],
+    "shortDescription": "Top-tier high CCA starting battery designed for heavy diesel cranking, intense heat cycles, and fleet reliability.",
+    "fullDescription": "EverStart Heavy-Duty commercial batteries are built to exceed strict commercial fleet ignition requirements. Featuring reinforced radial grid plates, impact-resistant polypropylene casing, and high reserve capacity for demanding electronics and heavy diesel engines.",
+    "specifications": {
+      "Brand": "EverStart",
+      "Application": "Heavy Diesel Trucks, Fleet Haulage & SUVs",
+      "Voltage / Capacity": "12V 100Ah / 120Ah / 200Ah",
+      "Cold Cranking Amps (CCA)": "1000+ CCA",
+      "Plate Technology": "Reinforced Cast-on Strap & Calcium Alloy",
+      "Warranty": "12 Months Fleet Warranty"
+    },
+    "featured": false,
+    "inStock": true,
+    "published": true,
+    "createdAt": "2026-01-29T01:30:00Z"
   }
 ];
 

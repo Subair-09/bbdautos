@@ -116,7 +116,7 @@ export default function ProductCatalogueClient({
             Product Catalogue
           </h1>
           <p className="text-sm sm:text-base text-[#6B7077] mt-1">
-            Browse our range of tyres, trucks and vehicles. Use the filters to find what you need.
+            Browse our range of commercial trucks, industrial tyres, automotive batteries, and vehicles. Use the filters to find what you need.
           </p>
         </div>
 
@@ -154,14 +154,15 @@ export default function ProductCatalogueClient({
           </form>
         </div>
 
-        {/* Category Tabs: All, Tyres, Trucks, Vehicles */}
+        {/* Category Tabs: All, Trucks, Tyres, Batteries, Vehicles */}
         <div className="flex items-center gap-2 mb-8 overflow-x-auto pb-2 scrollbar-none border-b border-[#F0F0F0]">
-          {(['all', 'tyres', 'trucks', 'vehicles'] as const).map((cat) => {
+          {(['all', 'trucks', 'tyres', 'batteries', 'vehicles'] as const).map((cat) => {
             const active = activeCategory === cat;
             const labels = {
               all: 'All',
-              tyres: 'Tyres',
               trucks: 'Trucks',
+              tyres: 'Tyres',
+              batteries: 'Batteries',
               vehicles: 'Vehicles',
             };
             return (
@@ -224,8 +225,9 @@ export default function ProductCatalogueClient({
               </label>
               <div className="space-y-2">
                 {[
-                  { id: 'tyres', label: 'Tyres' },
                   { id: 'trucks', label: 'Trucks' },
+                  { id: 'tyres', label: 'Tyres' },
+                  { id: 'batteries', label: 'Batteries' },
                   { id: 'vehicles', label: 'Vehicles' },
                 ].map((item) => (
                   <label

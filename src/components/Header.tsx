@@ -14,16 +14,20 @@ export default function Header() {
 
   const navLinks = [
     { label: 'Products', href: '/products' },
+    { label: 'Trucks', href: '/trucks' },
     { label: 'Tyres', href: '/tyres' },
-    { label: 'Trucks & Vehicles', href: '/trucks' },
+    { label: 'Batteries', href: '/batteries' },
+    { label: 'Vehicles', href: '/vehicles' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ];
 
   const isActive = (href: string) => {
     if (href === '/products' && pathname === '/products') return true;
+    if (href === '/trucks' && pathname === '/trucks') return true;
     if (href === '/tyres' && pathname === '/tyres') return true;
-    if (href === '/trucks' && (pathname === '/trucks' || pathname === '/vehicles')) return true;
+    if (href === '/batteries' && pathname === '/batteries') return true;
+    if (href === '/vehicles' && pathname === '/vehicles') return true;
     if (href === '/about' && pathname === '/about') return true;
     if (href === '/contact' && pathname === '/contact') return true;
     return false;
@@ -79,7 +83,7 @@ export default function Header() {
           </Link>
 
           {/* Center Navigation Links - Desktop */}
-          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <nav className="hidden md:flex items-center space-x-3.5 lg:space-x-5 xl:space-x-6 text-xs lg:text-sm font-medium">
             {navLinks.map((link) => {
               const active = isActive(link.href);
               return (

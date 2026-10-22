@@ -1,4 +1,4 @@
-export type ProductCategory = 'tyres' | 'trucks' | 'vehicles';
+export type ProductCategory = 'tyres' | 'trucks' | 'vehicles' | 'batteries';
 
 export type QuoteStatus = 
   | 'New' 
