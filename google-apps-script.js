@@ -71,7 +71,7 @@ function handleQuoteRequest(data) {
   }
   itemsHtml += '</table>';
 
-  var subject = "🚨 New BBD Autos Quote Request: " + rfqId + " - " + fullName;
+  var subject = "New BBD Autos Quote Request: " + rfqId + " - " + fullName;
 
   var htmlBody = '<div style="font-family:Arial,sans-serif;max-width:640px;margin:auto;padding:24px;border:1px solid #E3E4E6;border-radius:8px;background:#ffffff;">' +
     '<div style="border-bottom:3px solid #C91F26;padding-bottom:12px;margin-bottom:20px;">' +
@@ -138,7 +138,7 @@ function handleContactMessage(data) {
   var subject = data.subject || "General Commercial Enquiry";
   var message = data.message || "N/A";
 
-  var emailSubject = "📬 BBD Autos Contact Enquiry: " + subject + " - " + fullName;
+  var emailSubject = "BBD Autos Contact Enquiry: " + subject + " - " + fullName;
 
   var htmlBody = '<div style="font-family:Arial,Helvetica,sans-serif;max-width:640px;margin:auto;padding:24px;border:1px solid #E3E4E6;border-radius:8px;background:#ffffff;">' +
     '<div style="border-bottom:3px solid #C91F26;padding-bottom:12px;margin-bottom:20px;">' +
