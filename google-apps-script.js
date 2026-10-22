@@ -137,21 +137,49 @@ function handleContactMessage(data) {
   var subject = data.subject || "General Commercial Enquiry";
   var message = data.message || "N/A";
 
-  var emailSubject = "📬 BBD Autos Contact Message: " + subject + " - " + fullName;
+  var emailSubject = "📬 BBD Autos Contact Enquiry: " + subject + " - " + fullName;
 
-  var htmlBody = '<div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;padding:24px;border:1px solid #E3E4E6;border-radius:8px;">' +
-    '<h2 style="color:#171B1F;border-bottom:2px solid #C91F26;padding-bottom:8px;">BBD Autos Contact Form</h2>' +
-    '<p><strong>From:</strong> ' + fullName + ' (' + email + ', ' + phone + ')</p>' +
-    '<p><strong>Subject:</strong> ' + subject + '</p>' +
-    '<div style="background:#F9FAFB;padding:16px;border-radius:6px;border:1px solid #E5E7EB;margin:16px 0;">' +
-      '<p style="margin:0;white-space:pre-wrap;">' + message + '</p>' +
+  var htmlBody = '<div style="font-family:Arial,Helvetica,sans-serif;max-width:640px;margin:auto;padding:24px;border:1px solid #E3E4E6;border-radius:8px;background:#ffffff;">' +
+    '<div style="border-bottom:3px solid #C91F26;padding-bottom:12px;margin-bottom:20px;">' +
+      '<h2 style="margin:0;color:#171B1F;font-size:22px;letter-spacing:-0.5px;">BBD <span style="color:#C91F26;">AUTOS</span></h2>' +
+      '<p style="margin:4px 0 0;color:#6B7077;font-size:13px;">Website Contact Form &middot; <strong style="color:#171B1F;">' + subject + '</strong></p>' +
     '</div>' +
-    '<p style="font-size:12px;color:#666;">Routed automatically to ' + (data.targetEmail || RECIPIENT_EMAIL) + '</p>' +
+
+    '<h3 style="color:#171B1F;font-size:15px;margin-top:0;margin-bottom:12px;border-bottom:1px solid #EAEAEA;padding-bottom:6px;">Sender Information</h3>' +
+    '<table style="width:100%;font-size:13px;line-height:1.8;margin-bottom:20px;border-collapse:collapse;">' +
+      '<tr>' +
+        '<td style="width:130px;color:#6B7077;padding:4px 0;vertical-align:top;">Full Name:</td>' +
+        '<td style="padding:4px 0;"><strong style="color:#171B1F;font-size:14px;">' + fullName + '</strong></td>' +
+      '</tr>' +
+      '<tr>' +
+        '<td style="color:#6B7077;padding:4px 0;vertical-align:top;">Email Address:</td>' +
+        '<td style="padding:4px 0;"><a href="mailto:' + email + '" style="color:#C91F26;font-weight:bold;text-decoration:none;">' + email + '</a></td>' +
+      '</tr>' +
+      '<tr>' +
+        '<td style="color:#6B7077;padding:4px 0;vertical-align:top;">Phone Number:</td>' +
+        '<td style="padding:4px 0;"><strong style="color:#171B1F;">' + phone + '</strong></td>' +
+      '</tr>' +
+      '<tr>' +
+        '<td style="color:#6B7077;padding:4px 0;vertical-align:top;">Subject:</td>' +
+        '<td style="padding:4px 0;color:#171B1F;font-weight:600;">' + subject + '</td>' +
+      '</tr>' +
+    '</table>' +
+
+    '<h3 style="color:#171B1F;font-size:15px;margin-top:0;margin-bottom:10px;border-bottom:1px solid #EAEAEA;padding-bottom:6px;">Message</h3>' +
+    '<div style="background:#F9FAFB;padding:16px 18px;border-radius:6px;border:1px solid #E5E7EB;margin-bottom:20px;">' +
+      '<p style="margin:0;color:#191B1F;font-size:14px;line-height:1.6;white-space:pre-wrap;">' + message + '</p>' +
+    '</div>' +
+
+    '<div style="margin-top:24px;padding:12px;background:#F5F5F5;border-radius:4px;font-size:11px;color:#6B7077;text-align:center;">' +
+      'Submitted via BBD Autos contact form and routed to <strong>' + (data.targetEmail || RECIPIENT_EMAIL) + '</strong>.<br>' +
+      'Click <strong>Reply</strong> in your email client to respond directly to <strong>' + fullName + '</strong> (' + email + ').' +
+    '</div>' +
   '</div>';
 
   var recipient = data.targetEmail || RECIPIENT_EMAIL;
 
-  GmailApp.sendEmail(recipient, emailSubject, message, {
+  GmailApp.sendEmail(recipient, emailSubject, "From: " + fullName + "\nEmail: " + email + "\nPhone: " + phone + "\nSubject: " + subject + "\n\nMessage:\n" + message, {
+    name: "BBD Autos Contact Desk",
     htmlBody: htmlBody,
     replyTo: email
   });
