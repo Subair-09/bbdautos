@@ -2,6 +2,31 @@
   {
     "fullName": "SUBAIR NURUDEEN ADEWALE",
     "email": "binmatech@outlook.com",
+    "phone": "07033968648",
+    "deliveryLocation": "Abuja Central Terminal, FCT",
+    "companyName": "SAN KIDS ACADEMY",
+    "businessType": "Fleet Logistics Operator",
+    "additionalNotes": "Urgent delivery for fleet operations in Abuja.",
+    "items": [
+      {
+        "productId": "prod-truck-tyre-295-80r22",
+        "name": "Truck Tyre",
+        "brand": "Premium Brand",
+        "category": "tyres",
+        "specificationSummary": "295/80R22.5 · Radial",
+        "image": "/images/products/commercial_truck_tyre.jpg",
+        "quantity": 12,
+        "slug": "truck-tyre-295-80r22-5"
+      }
+    ],
+    "id": "RFQ-2026-4021",
+    "createdAt": "2026-10-22T15:19:25.967Z",
+    "status": "New",
+    "internalNotes": []
+  },
+  {
+    "fullName": "SUBAIR NURUDEEN ADEWALE",
+    "email": "binmatech@outlook.com",
     "phone": "+2347033968648",
     "deliveryLocation": "abuja",
     "companyName": "SAN KIDS ACADEMY",
