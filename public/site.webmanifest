@@ -1,0 +1,21 @@
+{
+  "name": "BBD Autos Nigeria",
+  "short_name": "BBD Autos",
+  "description": "Quality commercial trucks, vehicles, batteries and tyres in Nigeria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#171B1F",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

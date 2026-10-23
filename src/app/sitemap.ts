@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getProducts } from '@/lib/db';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://bbdautos.com';
+  const baseUrl = 'https://www.bbdautosng.com';
   const products = getProducts();
 
   const productEntries: MetadataRoute.Sitemap = products.map((product) => ({

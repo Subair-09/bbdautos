@@ -24,15 +24,40 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!product) {
     return {
       title: 'Product Not Found | BBD Autos',
+      robots: { index: false, follow: false },
     };
   }
+
+  const canonicalUrl = `https://www.bbdautosng.com/products/${product.slug}`;
+  const imageUrl = product.image.startsWith('http')
+    ? product.image
+    : `https://www.bbdautosng.com${product.image}`;
+
   return {
-    title: `${product.name} | BBD Autos Nigeria`,
+    title: `${product.name} | ${product.brand} in Nigeria | BBD Autos`,
     description: product.shortDescription,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
-      title: `${product.name} | BBD Autos`,
+      title: `${product.name} | BBD Autos Nigeria`,
       description: product.shortDescription,
-      images: [product.image],
+      url: canonicalUrl,
+      siteName: 'BBD Autos',
+      locale: 'en_NG',
+      type: 'website',
+      images: [
+        {
+          url: imageUrl,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.name} | BBD Autos Nigeria`,
+      description: product.shortDescription,
+      images: [imageUrl],
     },
   };
 }
@@ -49,10 +74,84 @@ export default function ProductDetailPage({ params }: Props) {
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
 
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    image: [
+      product.image.startsWith('http')
+        ? product.image
+        : `https://www.bbdautosng.com${product.image}`,
+    ],
+    description: product.fullDescription || product.shortDescription,
+    sku: product.id,
+    mpn: product.id,
+    brand: {
+      '@type': 'Brand',
+      name: product.brand,
+    },
+    category: product.category,
+    offers: {
+      '@type': 'Offer',
+      url: `https://www.bbdautosng.com/products/${product.slug}`,
+      priceCurrency: 'NGN',
+      price: 'Contact for Quote',
+      availability: product.inStock
+        ? 'https://schema.org/InStock'
+        : 'https://schema.org/OutOfStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      seller: {
+        '@type': 'AutoDealer',
+        name: 'BBD Autos',
+      },
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.bbdautosng.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Products',
+        item: 'https://www.bbdautosng.com/products',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: product.category.charAt(0).toUpperCase() + product.category.slice(1),
+        item: `https://www.bbdautosng.com/${product.category}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: product.name,
+        item: `https://www.bbdautosng.com/products/${product.slug}`,
+      },
+    ],
+  };
+
   return (
-    <ProductDetailClient
-      product={product}
-      relatedProducts={related}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <ProductDetailClient
+        product={product}
+        relatedProducts={related}
+      />
+    </>
   );
 }

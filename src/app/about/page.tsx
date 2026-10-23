@@ -5,8 +5,21 @@ import { ArrowRight, ShieldCheck, Users, MapPin, Wrench, CheckCircle } from 'luc
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | BBD Autos Nigeria',
-  description: 'Built on Trust. Focused on Your Business. Learn about BBD Autos, Nigeria’s premier supplier of heavy-duty tyres, trucks, and commercial vehicles.',
+  title: 'About BBD Autos | Trucks, Vehicles & Fleet Solutions in Nigeria',
+  description:
+    'Built on Trust. Focused on Your Business. Learn about BBD Autos, Nigeria’s trusted supplier of commercial trucks, vehicles, industrial tyres, and batteries.',
+  alternates: {
+    canonical: 'https://www.bbdautosng.com/about',
+  },
+  openGraph: {
+    title: 'About BBD Autos | Commercial Vehicles & Tyres in Nigeria',
+    description:
+      'Built on Trust. Focused on Your Business. Learn about BBD Autos, Nigeria’s trusted supplier of commercial trucks, vehicles, industrial tyres, and batteries.',
+    url: 'https://www.bbdautosng.com/about',
+    siteName: 'BBD Autos',
+    locale: 'en_NG',
+    type: 'website',
+  },
 };
 
 export default function AboutPage() {

@@ -3,7 +3,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions | BBD Autos Nigeria',
-  description: 'Terms and Conditions of commercial supply and quotation for BBD Autos.',
+  description: 'Terms and Conditions of commercial automotive supply and quotation for BBD Autos.',
+  alternates: {
+    canonical: 'https://www.bbdautosng.com/terms',
+  },
 };
 
 export default function TermsPage() {

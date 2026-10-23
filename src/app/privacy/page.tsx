@@ -3,7 +3,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | BBD Autos Nigeria',
-  description: 'Privacy Policy for BBD Autos commercial automotive dealership.',
+  description: 'Privacy Policy for BBD Autos commercial automotive dealership in Nigeria.',
+  alternates: {
+    canonical: 'https://www.bbdautosng.com/privacy',
+  },
 };
 
 export default function PrivacyPage() {
