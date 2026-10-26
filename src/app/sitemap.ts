@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getProducts } from '@/lib/db';
 
+export const revalidate = 86400;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.bbdautosng.com';
   const products = getProducts();

@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin/', '/api/admin/'],
+        disallow: ['/admin', '/admin/', '/api/'],
       },
     ],
     sitemap: 'https://www.bbdautosng.com/sitemap.xml',
